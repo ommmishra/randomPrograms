@@ -29,3 +29,13 @@ class Tree:
 		else:
 			print(str(val) + " Found")
 
+	def height(self, root):
+		if(root.left is None and root.right is None):
+			return 0
+		elif(root.left is None):
+			return 1+height(root.right)
+		elif(root.right is None):
+			return 1+height(root.left)
+		else:
+			return(max(1 + height(root.right), 1 + height(root.left)))
+
